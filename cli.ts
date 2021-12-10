@@ -3,13 +3,11 @@
 import { argv } from 'process';
 import yargs from 'yargs/yargs';
 
-const options: string[] = ["one", "two", "three"];
-type Options = typeof options[number];
-
 const parser = yargs(process.argv.slice(2))
   .command({
     command: "apple",
     describe: "Apples, part of apples and oranges.",
+    // TODO: find the type of builder
     builder: {
       a: { type: 'boolean', default: false },
       b: { type: 'string', demandOption: true },
@@ -17,8 +15,8 @@ const parser = yargs(process.argv.slice(2))
       d: { type: 'array' },
       e: { type: 'count' },
       f: { choices: ['1', '2', '3'] },
-      o: { choices: options }
     },
+    // TODO: find the type of handler
     handler: (argv) => { console.log("apple"); }
   })
   .command({
@@ -31,7 +29,6 @@ const parser = yargs(process.argv.slice(2))
       d: { type: 'array' },
       e: { type: 'count' },
       f: { choices: ['1', '2', '3'] },
-      o: { choices: options }
     },
     handler: (argv) => { console.log("apple"); }
   })
