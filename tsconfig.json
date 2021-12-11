@@ -10,6 +10,6 @@
   "include": [
     "cli.ts",
 
-    "apple.ts"
+    "commands/apple.ts"
   ]
 }

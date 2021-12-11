@@ -3,15 +3,10 @@
 import { appendFile } from 'fs';
 import { argv } from 'process';
 import yargs from 'yargs/yargs';
-import { apple } from './apple';
+import { apple } from './commands/apple';
 
 const parser = yargs(process.argv.slice(2))
-  .command({
-    command: apple.command,
-    describe: apple.describe,
-    builder: apple.builder, 
-    handler: apple.handler,
-  })
+  .command(apple.cmd)
   .command({
     command: "orange",
     describe: "Oranges, part of apples and oranges.",
