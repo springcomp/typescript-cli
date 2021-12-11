@@ -4,8 +4,8 @@
   "description": "Azure API Management - Helm Templating Engine CLI",
   "main": "cli.js",
   "scripts": {
-    "main": "node dist/cli.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "main": "node dist/cli.js"
   },
   "bin": {
     "apim": "./dist/cli.js"
