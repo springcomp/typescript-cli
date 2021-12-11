@@ -9,7 +9,7 @@
   },
   "include": [
     "cli.ts",
-
-    "commands/apple.ts"
+    "commands/apple.ts",
+    "services/appleService.ts"
   ]
 }

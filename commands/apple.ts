@@ -1,12 +1,13 @@
 import { Arguments, CommandModule, } from "yargs";
+import { services } from "../services/appleService";
 
 export namespace apple {
 	export class options {
 		a?: boolean = false;
-		b?: string | undefined = undefined;
+		b?: string = "";
 		c?: number;
 		d?: string[];
-		e?: string[];
+		e?: number = 0;
 		f?: string[];
 	};
 
@@ -22,10 +23,7 @@ export namespace apple {
 			f: { choices: ['1', '2', '3'] },
 		},
 		handler: (args: Arguments<options>) => {
-			console.log(args.a);
-			console.log(args._);
-			console.log(args.$0);
-			console.log(args.unknown);
+			services.AppleService.handle(args);
 		}
 	};
 }
