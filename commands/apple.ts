@@ -5,10 +5,10 @@ export namespace apple {
 	export class options {
 		a?: boolean = false;
 		b?: string = "";
-		c?: number;
-		d?: string[];
+		c?: number | undefined;
+		d?: (string | number)[] | undefined;
 		e?: number = 0;
-		f?: string[];
+		f?: string | undefined;
 	};
 
 	export const cmd: CommandModule<options, {}> = {
